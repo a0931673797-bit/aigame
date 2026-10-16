@@ -1,0 +1,107 @@
+/* ============================================================
+   三線跑酷遊戲 — 全域樣式
+   ============================================================ */
+
+/* 全域重設與頁面背景 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0d0d1a;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px 0;
+  font-family: sans-serif;
+}
+
+/* ============================================================
+   遊戲容器：包裹 Canvas 與 Overlay，需 position: relative
+   使 Overlay 可絕對定位於其內
+   ============================================================ */
+#gameContainer {
+  position: relative;
+  display: inline-block;
+}
+
+/* ============================================================
+   Canvas：水平置中、無多餘空白
+   ============================================================ */
+#gameCanvas {
+  display: block;
+  margin: auto;
+}
+
+/* ============================================================
+   Overlay 基礎樣式：絕對定位完整覆蓋 Canvas 區域
+   Flexbox 垂直置中內容
+   ============================================================ */
+#startOverlay,
+#gameOverOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: rgba(13, 13, 26, 0.85);
+  color: #ffffff;
+  text-align: center;
+}
+
+/* 開始畫面：預設顯示 */
+#startOverlay {
+  display: flex;
+}
+
+/* 遊戲結束畫面：預設隱藏 */
+#gameOverOverlay {
+  display: none;
+}
+
+/* ============================================================
+   Overlay 內文字樣式
+   ============================================================ */
+#startOverlay h1,
+#gameOverOverlay h1 {
+  font-size: 2.2rem;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+#gameOverOverlay p {
+  font-size: 1.2rem;
+  color: #ffd700;
+}
+
+/* ============================================================
+   按鈕基本樣式
+   ============================================================ */
+button {
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-family: sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: #4fc3f7;
+  color: #0d0d1a;
+  letter-spacing: 0.05em;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #81d4fa;
+}
+
+button:active {
+  transform: scale(0.97);
+}
